@@ -1,0 +1,29 @@
+"use strict";
+class User {
+    constructor(data) {
+        this.username = data.username;
+        this.age = data.age;
+        this.email = data.email;
+    }
+    validateUser() {
+        console.log("validating user");
+    }
+    saveUser() {
+        console.log("save user by calling axios to dabase");
+    }
+    notifyUser() {
+        console.log("notify user that is saved");
+    }
+}
+class UserFacade extends User {
+    constructor(data) {
+        super(data);
+    }
+    validateUserAndSaveUser() {
+        this.validateUser();
+        this.saveUser();
+        this.notifyUser();
+    }
+}
+const myUser = new UserFacade({ username: "abcd01", age: 22, email: "abcd01@gmail.com" });
+// myUser.validateUserAndSaveUser();
